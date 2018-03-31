@@ -1,17 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>See directions to your port</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Start location</ion-label>
+      <ion-input type="text" [(ngModel)]="start"></ion-input>
+
+    </ion-item>
+  <ion-item>
+      <ion-label floating>Start location</ion-label>
+      <ion-input type="text" [(ngModel)]="end"></ion-input>
+    </ion-item>
+  </ion-list>
+<button ion-button block on-tap="calculateAndDisplayRoute()">Show directions</button>    
+
+<div #map id="map"></div>
 </ion-content>
